@@ -44,7 +44,6 @@ public class BatchConfiguration {
     @Bean
     public Job processJob() {
         return jobBuilderFactory.get("processJob")
-//                .incrementer(new RunIdIncrementer())
                 .listener(listener)
                 .start(processStep())
                 .next(finalStep())
